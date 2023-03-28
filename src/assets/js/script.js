@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const swiper2 = new Swiper(".services-slider", {
     loop: true,
     spaceBetween: 0,
-    slidesPerView: 1,
+    slidesPerView: 'auto',
     speed: 800,
     navigation: {
       nextEl: ".services-next",
@@ -49,12 +49,16 @@ document.addEventListener('DOMContentLoaded', () => {
       nextEl: ".company-next",
       prevEl: ".company-prev",
     },
+    pagination: {
+      el: ".company-pagination",
+      clickable: true,
+    },
   });
 
   const swiper4 = new Swiper(".docs-slider", {
     loop: true,
     spaceBetween: 30,
-    slidesPerView: 1,
+    slidesPerView: 2,
     speed: 800,
     navigation: {
       nextEl: ".docs-next",
@@ -78,8 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const swiper5 = new Swiper(".categories-slider", {
     loop: true,
-    spaceBetween: 25,
-    slidesPerView: 1,
+    spaceBetween: 20,
+    slidesPerView: 'auto',
     speed: 800,
     navigation: {
       nextEl: ".categories-next",
@@ -87,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     breakpoints: {
       992: {
+        spaceBetween: 25,
         slidesPerView: 3,
       },
       576: {
@@ -97,8 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const swiper6 = new Swiper(".serv-slider", {
     loop: true,
-    spaceBetween: 30,
-    slidesPerView: 1,
+    spaceBetween: 20,
+    slidesPerView: 'auto',
     speed: 800,
     navigation: {
       nextEl: ".serv-next",
@@ -106,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     breakpoints: {
       1200: {
+        spaceBetween: 30,
         slidesPerView: 4,
       },
       992: {
@@ -135,8 +141,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const getHeaderSticky = (zero) => {
     let heightattention = 0;
-    let heightheader ;    
-    heightattention = document.querySelector('.attention').offsetHeight;    
+    let heightheader ; 
+    if (document.querySelector('.attention')) {
+      heightattention = document.querySelector('.attention').offsetHeight;    
+    }
+   
     const heightmenu = document.querySelector('.header-menu').offsetHeight;
     const heighcontent  = document.querySelector('.header-content ').offsetHeight;
     if (zero === 0) {
@@ -210,12 +219,264 @@ document.addEventListener('DOMContentLoaded', () => {
   $('.header-search__button').click(function (e) {
     e.preventDefault();
     $(this).toggleClass('active'); 
-    $('.header-search__form').slideToggle();
+    $('.header-search__form').addClass('show');
   });
 
-  $(document).click(function(event) {
-    if ($(event.target).closest(".header-search__button, .header-search").length) return;	
-    $('.header-search__form').hide();	
+  $('.header-search__form__slose').click(function (e) {
+    e.preventDefault();
+    $('.header-search__button').removeClass('active');
+    $('.header-search__form').removeClass('show');
   });
+
+  $('.button-catalog').click(function (e) {
+    e.preventDefault();
+    $(this).toggleClass('active'); 
+    $('body').toggleClass('body-hidden');
+    $('header').toggleClass('header-hidden');
+    $('.sidebar-menu').slideToggle();
+  });
+
+  $('.sidebar-menu__button').click(function (e) {
+    e.preventDefault();
+    $('.sidebar-menu__list').slideToggle();
+  });
+
+  $('.favorites-item-button').click(function (e) {
+    e.preventDefault();
+    if ( !$(this).hasClass("disabled") ) {
+      $(this).toggleClass('active'); 
+    }
+  });
+
+  $('.button-in-basket').click(function (e) {
+    e.preventDefault();
+    if ( !$(this).hasClass("disabled") ) {
+      $(this).toggleClass('active'); 
+    }
+  });
+  
+  $('.disabled').click(function (e) {
+    e.preventDefault();
+  });
+  
+  const loginButton = document.querySelector('#login-button');
+  const phoneButton = document.querySelector('#phone-button');
+
+  if (loginButton) {
+		loginButton.addEventListener('click' , (event) => {
+			$('#login-item').show();
+			$('#phone-item').hide();
+    });
+  }
+  if (phoneButton) {
+		phoneButton.addEventListener('click' , (event) => {
+			$('#login-item').hide();
+			$('#phone-item').show();
+    });
+  }
+  
+  var swiper11 = new Swiper(".mySwiper", {
+    loop: true,
+    spaceBetween: 10,
+    slidesPerView: 4,
+    freeMode: true,
+    watchSlidesProgress: true,
+    breakpoints: {
+      768: {
+        slidesPerView: 6,
+      },
+    }
+  });
+
+  var swiper22 = new Swiper(".mySwiper2", {
+    loop: true,
+    spaceBetween: 0,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    thumbs: {
+      swiper: swiper11,
+    },
+  });
+
+  const swiper10 = new Swiper(".other-slider", {
+    loop: true,
+    spaceBetween: 20,
+    slidesPerView: 'auto',
+    speed: 800,
+    navigation: {
+      nextEl: ".other-next",
+      prevEl: ".other-prev",
+    },
+    breakpoints: {
+      1200: {
+        spaceBetween: 30,
+        slidesPerView: 4,
+      },
+      992: {
+        slidesPerView: 3,
+      },
+      576: {
+        slidesPerView: 2,
+      }
+    },
+    pagination: {
+      el: ".other-pagination",
+      clickable: true,
+    },
+  });
+
+  if (document.querySelector('.catalog-item')) {
+		const blockHeiht = () => {
+			const collBrands = document.querySelectorAll('.catalog-item');
+      
+
+			collBrands.forEach(element => {
+				element.addEventListener("mouseenter", (e) => {
+					const height = e.target.querySelector('.catalog-item__text').clientHeight +  e.target.querySelector('.catalog-item__image').clientHeight;
+          const heightBlock = e.target.clientHeight;
+          
+          if (heightBlock < height) {
+            e.target.querySelector('.catalog-item__content').style.height = `${height}px`
+            e.target.style.zIndex = 10;
+          }
+         
+				});
+				element.addEventListener("mouseleave", (e) => {
+					const height = e.target.clientHeight;
+          e.target.querySelector('.catalog-item__content').style.height = `${height}px`
+					e.target.style.zIndex = 5;
+				});
+			});
+		};	
+		
+		if (window.innerWidth > 991) {
+			blockHeiht();
+		}
+
+		window.addEventListener('resize', () => {
+			if (window.innerWidth > 991) {
+				blockHeiht();
+			}
+		});
+	}
+
+  $('[data-role=toggle-block]').each(function() {
+		var $block = $(this);
+		$block.on('click.toggle', '[data-role=toggle-btn]', function() {
+			var $btn = $(this);
+			var $data = $block.find('[data-role=toggle-data]');
+
+			// toggle $btn
+			$btn.toggleClass('shown');
+			// show/hide $data
+			$data.slideToggle(200);
+		});
+	});
  
+  $('.category-button').click(function (e) {
+    e.preventDefault();
+    $('.category-sidebar').slideToggle();
+  });
+
+  $('.full-in-basket').click(function (e) {
+    e.preventDefault();
+    if ( !$(this).hasClass("disabled") ) {
+      $(this).toggleClass('active'); 
+    }
+  });
+
+  var swiper11 = new Swiper(".mySwiper3", {
+    loop: true,
+    spaceBetween: 10,
+    slidesPerView: 4,
+    freeMode: true,
+    watchSlidesProgress: true,
+    breakpoints: {
+      768: {
+        slidesPerView: 6,
+      },
+    }
+  });
+
+  var swiper22 = new Swiper(".mySwiper4", {
+    loop: true,
+    spaceBetween: 0,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    thumbs: {
+      swiper: swiper11,
+    },
+  });
+
+  $('.to-favorites').click(function (e) {
+    e.preventDefault();
+    if ( !$(this).hasClass("disabled") ) {
+      $(this).toggleClass('active'); 
+    }
+  });
+
+  const swiper111 = new Swiper(".slider-other", {
+    loop: true,
+    spaceBetween: 20,
+    slidesPerView: 'auto',
+    speed: 800,
+    navigation: {
+      nextEl: ".slider-other-next",
+      prevEl: ".slider-other-prev",
+    },
+    breakpoints: {
+      1200: {
+        spaceBetween: 30,
+        slidesPerView: 4,
+      },
+      992: {
+        slidesPerView: 3,
+      },
+      576: {
+        slidesPerView: 2,
+      }
+    },
+    pagination: {
+      el: ".slider-other-pagination",
+      clickable: true,
+    },
+  });
+
+  $('.input-clear').click(function (e) {
+    e.preventDefault();
+    console.log(1)
+    document.querySelector('.form-control.city').value = '';
+  });
+
+  const physicalButton = document.querySelector('#physical-button');
+  const yurButton = document.querySelector('#yur-button');
+
+  if (physicalButton) {
+		physicalButton.addEventListener('click' , (event) => {
+			$('#physical-item').show();
+			$('#yur-item').hide();
+    });
+  }
+  if (yurButton) {
+		yurButton.addEventListener('click' , (event) => {
+			$('#physical-item').hide();
+			$('#yur-item').show();
+    });
+  }
+  
+  const blocks = document.querySelectorAll('.product-in-basket');
+
+  if (blocks) {    
+    if (blocks.length > 2) {
+      $('.basket-list__more').show();
+    } else {
+      $('.basket-list__more').hide();
+    }
+  }
+
+
 });
