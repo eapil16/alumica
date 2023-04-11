@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="close_button" data-name="close button" transform="translate(-364 -11)">
+    <rect id="Rectangle_512" data-name="Rectangle 512" width="40" height="40" transform="translate(364 11)" fill="none"/>
+    <path id="Path_243" data-name="Path 243" d="M11489.5,22077.746l-4.5-4.414-4.5,4.414a.866.866,0,0,1-.62.254.9.9,0,0,1-.621-.248.852.852,0,0,1,0-1.213l4.633-4.539-4.633-4.537a.848.848,0,0,1,0-1.209.887.887,0,0,1,1.241,0l4.5,4.414,4.5-4.414a.887.887,0,0,1,1.241,0,.848.848,0,0,1,0,1.209l-4.633,4.537,4.633,4.539a.852.852,0,0,1,0,1.213.9.9,0,0,1-.621.248A.866.866,0,0,1,11489.5,22077.746Z" transform="translate(-11101 -22041)" fill="#ababab"/>
+  </g>
+</svg>

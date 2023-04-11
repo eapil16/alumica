@@ -429,7 +429,9 @@
               </ol>
             </nav>
             <div class="content-sidebar flex a-top">
-              <div class="btn button button-red sidebar-menu__button">МЕНЮ  </div>
+              <div class="btn button button-red sidebar-menu__button"> 
+                <div class="toggle">  </div>
+              </div>
               <ul class="sidebar-menu__list">
                 <li> <a href="#">3D-модели</a></li>
                 <li> <a href="#">О компании</a></li>
@@ -591,6 +593,14 @@
                         </div>
                       </div>
                     </div>
+                  </div>
+                  <div class="pagination-block"><a class="btn button button-gray" href="#">Показать еще </a>
+                    <ul class="pagination">
+                      <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -755,7 +765,12 @@
                 <label>Компания</label>
                 <input class="form-control" placeholder="Укажите название компании">
               </div>
-              <p class="info">Нажимая кнопку «Отправить», я даю свое согласие на обработку моих<a href="#"> персональных данных.</a></p>
+              <div class="chekbox">
+                <p> 
+                  <input type="checkbox" id="modelcheck-1" checked="checked">
+                  <label for="modelcheck-1">Нажимая кнопку «Отправить», я даю свое согласие на обработку моих <a href="#">персональных данных.</a></label>
+                </p>
+              </div>
               <button class="btn button button-red" type="submit">Отправить </button>
             </div>
           </div>
@@ -785,7 +800,12 @@
                 <label>О себе</label>
                 <textarea class="form-control" placeholder="Расскажите о себе"></textarea>
               </div>
-              <p class="info">Нажимая кнопку «Отправить», я даю свое согласие на обработку моих<a href="#"> персональных данных.</a></p>
+              <div class="chekbox">
+                <p> 
+                  <input type="checkbox" id="vacancycheck-1" checked="checked">
+                  <label for="vacancycheck-1">Нажимая кнопку «Отправить», я даю свое согласие на обработку моих <a href="#">персональных данных.</a></label>
+                </p>
+              </div>
               <button class="btn button button-red" type="submit">Отправить </button>
             </div>
           </div>

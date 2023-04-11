@@ -452,6 +452,7 @@
                       <div class="swiper-slide"><img src="assets/images/produst-full.png" alt=""></div>
                     </div>
                   </div>
+                  <div class="swiper-pagination product-page-pagination"></div>
                   <div class="swiper mySwiper3" thumbsSlider="">
                     <div class="swiper-wrapper">
                       <div class="swiper-slide"><img src="assets/images/produst-full.png" alt=""></div>
@@ -506,7 +507,7 @@
                         <button class="btn spinner-button increase" type="button"> <img src="assets/images/pr-m.svg" alt=""></button>
                         <input class="spinner-input" type="text" value="1 шт.">
                         <button class="btn spinner-button decrease" type="button"> <img src="assets/images/pr-p.svg" alt=""></button>
-                      </div><a class="btn button button-red full-in-basket" href="#">Добавить в корзину </a><a class="btn button button-white" href="#">Купить в один клик</a>
+                      </div><a class="btn button button-red full-in-basket" href="#"> <span class="text">Добавить в корзину </span></a><a class="btn button button-white" href="#">Купить в один клик</a>
                     </div><a class="btn button button-white button-white-image" href="#"> <img src="assets/images/info.svg" alt=""><span class="text">Оплата и доставка</span></a><a class="btn button button-white button-white-image" href="#"> <img src="assets/images/serv.svg" alt=""><span class="text">Услуги по проектированию</span></a>
                   </div>
                 </div>
@@ -1018,7 +1019,12 @@
                 <label>Компания</label>
                 <input class="form-control" placeholder="Укажите название компании">
               </div>
-              <p class="info">Нажимая кнопку «Отправить», я даю свое согласие на обработку моих<a href="#"> персональных данных.</a></p>
+              <div class="chekbox">
+                <p> 
+                  <input type="checkbox" id="modelcheck-1" checked="checked">
+                  <label for="modelcheck-1">Нажимая кнопку «Отправить», я даю свое согласие на обработку моих <a href="#">персональных данных.</a></label>
+                </p>
+              </div>
               <button class="btn button button-red" type="submit">Отправить </button>
             </div>
           </div>
@@ -1048,7 +1054,12 @@
                 <label>О себе</label>
                 <textarea class="form-control" placeholder="Расскажите о себе"></textarea>
               </div>
-              <p class="info">Нажимая кнопку «Отправить», я даю свое согласие на обработку моих<a href="#"> персональных данных.</a></p>
+              <div class="chekbox">
+                <p> 
+                  <input type="checkbox" id="vacancycheck-1" checked="checked">
+                  <label for="vacancycheck-1">Нажимая кнопку «Отправить», я даю свое согласие на обработку моих <a href="#">персональных данных.</a></label>
+                </p>
+              </div>
               <button class="btn button button-red" type="submit">Отправить </button>
             </div>
           </div>
