@@ -496,7 +496,8 @@
                       <p>Способ получения:<span class="text">Самовывоз</span></p>
                     </div>
                     <div class="total">
-                      <p>Итоговая стоимость заказа:<span class="text">999 999 руб.</span></p><a class="btn button button-red" href="#">Повторить заказ</a>
+                      <p>Итоговая стоимость заказа:<span class="text">999 999 руб.</span></p>
+                      <div class="buttons-block"><a class="btn button button-red" href="#">Повторить заказ</a><a class="btn button button-white" href="#" data-bs-toggle="modal" data-bs-target="#cancelModal">Отменить заказ </a></div>
                     </div>
                   </div>
                 </div>
@@ -555,7 +556,8 @@
                       <p>Упаковка:<span class="text">Без жесткой упаковки</span></p>
                     </div>
                     <div class="total">
-                      <p>Итоговая стоимость заказа:<span class="text">999 999 руб.</span></p><a class="btn button button-red" href="#">Повторить заказ</a>
+                      <p>Итоговая стоимость заказа:<span class="text">999 999 руб.</span></p>
+                      <div class="buttons-block"><a class="btn button button-red" href="#">Повторить заказ</a><a class="btn button button-white" href="#" data-bs-toggle="modal" data-bs-target="#cancelModal">Отменить заказ </a></div>
                     </div>
                   </div>
                 </div>
@@ -768,6 +770,20 @@
                 </p>
               </div>
               <button class="btn button button-red" type="submit">Отправить </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="cancelModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Вы точно хотите отменить заказ?</h5>
+              <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+              <button class="btn button button-red" type="submit">Да </button>
+              <button class="btn button button-white" type="submit" data-bs-dismiss="modal" aria-label="Закрыть">Нет </button>
             </div>
           </div>
         </div>
