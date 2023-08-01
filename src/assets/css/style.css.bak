@@ -9258,9 +9258,6 @@ ul.header-social li a img {
 } 
 
 /* 31 07 */
-.left-menu__item:hover .left-menu__dropdown {
-  transition: all 200ms ease-in-out;
-}
 
 .ps {
 	overflow: hidden !important;
