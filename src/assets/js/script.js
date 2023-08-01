@@ -599,8 +599,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }    
 
       const getleftPositon = () => {
+
+        const coll = document.querySelectorAll('.left-menu__dropdown');
         const coordsLeft = document.querySelector('.header-catalog__button').getBoundingClientRect().right;
         document.querySelector('.left-menu__scroll-0').style.left = `${coordsLeft - 2}px`; 
+        coll.forEach(element => {
+          element.style.left = `${coordsLeft - 2}px`; 
+        });
       }
 
       if (document.querySelector('.sidebar-scroll') ) {
