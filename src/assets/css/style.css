@@ -9397,6 +9397,8 @@ ul.header-social li a img {
     width: 100%;
     position: initial;
     max-height: initial;
+    opacity: 1;
+    visibility: visible;
   }
   .sidebar-scroll {
     display: block;
