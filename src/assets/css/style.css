@@ -9256,3 +9256,175 @@ ul.header-social li a img {
     display: block;
   }
 } 
+
+/* 31 07 */
+
+.ps {
+	overflow: hidden !important;
+	overflow-anchor: none;
+	-ms-overflow-style: none;
+	touch-action: auto;
+	-ms-touch-action: auto;
+	position: relative;
+}
+.ps__rail-x {
+	display: none;
+	opacity: 0;
+	transition: background-color .2s linear, opacity .2s linear;
+	-webkit-transition: background-color .2s linear, opacity .2s linear;
+	height: 15px;
+	/* there must be 'bottom' or 'top' for ps__rail-x */
+	bottom: 0px;
+	/* please don't change 'position' */
+	position: absolute;
+}
+.ps__rail-y {
+	display: none;
+	opacity: 0.6;
+	transition: background-color .2s linear, opacity .2s linear;
+	-webkit-transition: background-color .2s linear, opacity .2s linear;
+	width: 15px;
+	/* there must be 'right' or 'left' for ps__rail-y */
+	right: 0;
+	/* please don't change 'position' */
+	position: absolute;
+}
+.ps--active-x > .ps__rail-x,
+.ps--active-y > .ps__rail-y {
+	display: block;
+	background-color: transparent;
+}
+.ps:hover > .ps__rail-x,
+.ps:hover > .ps__rail-y,
+.ps--focus > .ps__rail-x,
+.ps--focus > .ps__rail-y,
+.ps--scrolling-x > .ps__rail-x,
+.ps--scrolling-y > .ps__rail-y {
+	opacity: 0.6;
+}
+.ps .ps__rail-x:hover,
+.ps .ps__rail-y:hover,
+.ps .ps__rail-x:focus,
+.ps .ps__rail-y:focus,
+.ps .ps__rail-x.ps--clicking,
+.ps .ps__rail-y.ps--clicking {
+	background-color: #eee;
+	opacity: 0.9;
+}
+.ps__thumb-x {
+	background-color: #b1b1b1;
+	border-radius: 6px;
+	transition: background-color .2s linear, height .2s ease-in-out;
+	-webkit-transition: background-color .2s linear, height .2s ease-in-out;
+	height: 6px;
+	/* there must be 'bottom' for ps__thumb-x */
+	bottom: 2px;
+	/* please don't change 'position' */
+	position: absolute;
+}
+.ps__thumb-y {
+	background-color: #b1b1b1;
+	border-radius: 6px;
+	transition: background-color .2s linear, width .2s ease-in-out;
+	-webkit-transition: background-color .2s linear, width .2s ease-in-out;
+	width: 3px;
+	/* there must be 'right' for ps__thumb-y */
+	right: 2px;
+	/* please don't change 'position' */
+	position: absolute;
+}
+.ps__rail-x:hover > .ps__thumb-x,
+.ps__rail-x:focus > .ps__thumb-x,
+.ps__rail-x.ps--clicking .ps__thumb-x {
+	background-color: #b1b1b1;
+	height: 11px;
+}
+.ps__rail-y:hover > .ps__thumb-y,
+.ps__rail-y:focus > .ps__thumb-y,
+.ps__rail-y.ps--clicking .ps__thumb-y {
+	background-color: #b1b1b1;
+	width: 11px;
+}
+
+.sidebar-scroll {
+  display: block;
+  margin: 0;
+  padding: 0 4px 0 0;
+  position: relative;
+  max-height: calc(100vh - 230px);
+  overflow: hidden;
+}
+.sidebar-scroll.big {
+  max-height: calc(100vh - 230px);
+}
+.sidebar-scroll.small {
+  max-height: calc(100vh - 100px);
+}
+.all-height {
+  max-height:602px !important;
+}
+
+.sidebar-scroll .left-menu__dropdown {
+  position: fixed;
+  top: 199px;
+  left: 33.5%;
+  max-height:602px;
+}
+.sidebar-scroll .left-menu__dropdown.big-block {
+  max-height: calc(100vh - 210px);
+}
+.sidebar-scroll .left-menu__dropdown.small-block {
+  max-height: calc(100vh - 80px);
+}
+.sidebar-scroll .left-menu__dropdown.small-top {
+  top: 71px;
+}
+.sidebar-scroll .left-menu__dropdown.big-top {
+  top: 199px;
+}
+.sidebar-scroll .left-menu__dropdown.bigin-top {
+  top: 199px !important;
+}
+.sidebar-scroll .left-menu__dropdown.bigin-block {
+  max-height: calc(100vh - 210px) !important;
+}
+.sidebar-scroll .left-menu__submenu {
+  height: 620px;
+}
+
+@media screen and (max-width: 991px) {
+  .sidebar-scroll .left-menu__dropdown {
+    width: 100%;
+    position: initial;
+    max-height: initial;
+  }
+  .sidebar-scroll {
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    max-height: 100%;
+    overflow: auto;
+  }
+  .sidebar-scroll .left-menu__submenu {
+    height: 100%;
+  }
+  /* .sidebar-scroll .left-menu__dropdown.small-block {
+    max-height: calc(100vh - 140px);
+  }
+  .sidebar-scroll .left-menu__submenu {
+    height: auto;
+  }
+  .sidebar-scroll.small {
+    max-height: calc(100vh - 100px);
+  }
+  .header-inside .sidebar {
+    max-height: calc(100vh - 100px);
+  } 
+  .sidebar-scroll .left-menu__dropdown.big-block {
+    max-height: 320px;
+  } 
+  .sidebar-scroll .left-menu__dropdown.bigin-block {
+    max-height: 320px;
+  } */
+}
